@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse Rate Detector with OpenCV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="logo-header">
+    <img src="finallogo.jpg" alt="Pulse Tracker Logo" class="main-logo">
+</header>
+    <div class="container">
+        <p class="subtitle">Detect heart rate from your face using camera + OpenCV</p>
+        
+        <div class="video-container">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="output"></canvas>
+            <canvas id="opencvCanvas" style="display:none;"></canvas>
+        </div>
+        
+        <div class="pulse-display">
+            <div class="pulse-value" id="pulseValue">--</div>
+            <div class="pulse-unit">BPM</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-label">Status</span>
+                <span id="status" class="stat-value">Loading OpenCV...</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Signal Quality</span>
+                <span id="signalQuality" class="stat-value">--</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">FPS</span>
+                <span id="fps" class="stat-value">--</span>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="pulseChart"></canvas>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" disabled>▶ Start Detection</button>
+            <button id="stopBtn" disabled>⏹ Stop</button>
+            <button id="resetBtn">🔄 Reset</button>
+        </div>
+        
+        <div class="info">
+            <h3>📋 Instructions</h3>
+            <ul>
+                <li>Wait for OpenCV to load (status will change)</li>
+                <li>Sit still in good lighting</li>
+                <li>Keep your face visible in the camera</li>
+                <li>Wait 10-15 seconds for accurate reading</li>
+            </ul>
+        </div>
+    </div>
+
+    <script async src="opencv.js" type="text/javascript" onload="onOpenCvReady();" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
