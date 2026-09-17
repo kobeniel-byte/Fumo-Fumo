@@ -13,7 +13,7 @@
     border-radius: 10px; /* Optional: para maging medyo rounded ang corners ng logo */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #99d8ff; color: white; min-height: 100vh; padding: 20px; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #3296FA; color: white; min-height: 100vh; padding: 20px; }
 .container { max-width: 800px; margin: 0 auto; }
 .video-container { position: relative; width: 100%; max-width: 640px; height: 480px; margin: 0 auto 20px auto; }
 #video, #output { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
