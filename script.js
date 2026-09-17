@@ -41,10 +41,10 @@ faceMesh.onResults((results) => {
 
         if (estimatedDistanceCm < 25) {
             color = "#FF0000"; // Red
-            message = "Too Close! Move back.";
+            message = String(estimatedDistanceCm) + "Too Close! Move back.";
         } else if (estimatedDistanceCm > 40) {
             color = "#FFFF00"; // Yellow
-            message = "Too Far! Move closer.";
+            message = String(estimatedDistanceCm) + "Too Far! Move closer.";
         }
 
         // Draw Bounding Box with dynamic color
