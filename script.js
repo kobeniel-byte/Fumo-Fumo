@@ -41,7 +41,7 @@ faceMesh.onResults((results) => {
 
         if (estimatedDistanceCm < 25) {
             color = "#FF0000"; // Red
-            message = "Too Close! Move back diddy blud.";
+            message = String(faceWidthPixels) + "Too Close! Move back diddy blud.";
         } else if (estimatedDistanceCm > 40) {
             color = "#FFFF00"; // Yellow
             message = String(estimatedDistanceCm) + "Too Far! Move closer.";
