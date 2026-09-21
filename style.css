@@ -28,7 +28,6 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #507eb8; color: w
 .video-container { position: relative; width: 100%; max-width: 640px; height: 480px; margin: 0 auto 20px auto; }
 .grid-container p {
     text-align: center;
-    
 }
 #video, #output { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 #output { z-index: 10; pointer-events: none; }
