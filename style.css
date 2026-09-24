@@ -42,5 +42,5 @@ button:disabled { background: #555; cursor: not-allowed; }
 #stopBtn { background: #f44336; color: white; }
 
 @media (max-width: 768px) {
-    .pulse-display { text-align: center; width: 480px ; float: left; background: linear-gradient(135deg, #e94560, #0f3460); padding: 30px; border-radius: 10px; margin-bottom: 20px; }
+    .pulse-display { text-align: center; max-width: 480px ; float: left; background: linear-gradient(135deg, #e94560, #0f3460); padding: 30px; border-radius: 10px; margin-bottom: 20px; }
 }
