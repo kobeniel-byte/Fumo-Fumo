@@ -40,3 +40,7 @@ button { padding: 15px 30px; border: none; border-radius: 10px; font-weight: bol
 button:disabled { background: #555; cursor: not-allowed; }
 #startBtn { background: #4CAF50; color: white; }
 #stopBtn { background: #f44336; color: white; }
+
+@media (max-width: 768px) {
+    .pulse-display { text-align: center; width: 5000px ; float: left; background: linear-gradient(135deg, #e94560, #0f3460); padding: 30px; border-radius: 10px; margin-bottom: 20px; }
+}
