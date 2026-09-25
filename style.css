@@ -91,6 +91,7 @@ button:disabled { background: #555; cursor: not-allowed; }
     .video-container { position: relative; width: 100%; max-width: 640px; height: 120vw; margin: 0 auto 0 auto;  }
     .blud-container {
         padding: 10px;
+        background: #4CAF50
     }
     .grid-container { width: 100vw;  
         max-width: 100%; 
