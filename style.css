@@ -23,19 +23,60 @@
     
     
 }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #507eb8; color: white; min-height: 100vh; padding: 0px; }
+body { font-family: 'Segoe UI', Arial, sans-serif;
+    background: #507eb8;
+    color: white; 
+    min-height: 100vh; 
+    padding: 0px; 
+
+}
 .grid-container {  max-width: 1050px; margin: 0 auto; flex-wrap: nowrap; justify-content: center; }
-.video-container { position: relative; width: 100%; max-width: 640px; height: 480px; margin: 0 auto 20px auto; }
+.blud-container {  display: flex;
+    max-width: 1050px;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px; 
+    position: relative;
+    padding: 10px;
+}
+.video-container { position: relative; width: 100%; max-width: 640px; height: 480px;  }
 .grid-container p {
     text-align: center;
 }
-#video, #output { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-#output { z-index: 10; pointer-events: none; }
-.chart-container { width: 500px ; float: right; background: rgba(0, 0, 0, 0.516); border: 1px solid #333; border-radius: 10px; padding: 10px; margin-bottom: 20px; }
-#pulseChart { width: 100%; height: 150px; display: block}
-.pulse-display { text-align: center; width: 500px ; float: left; background: linear-gradient(135deg, #e94560, #0f3460); padding: 30px; border-radius: 10px; margin-bottom: 20px; }
+
+#video, #output { position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+#output { z-index: 10; 
+    pointer-events: none; 
+}
+.chart-container {
+    width: 500px;
+    background: rgba(0, 0, 0, 0.516); 
+    border: 1px solid #333; 
+    border-radius: 10px; 
+    padding: 10px; 
+    margin-bottom: 20px;
+}
+#pulseChart { width: 100%; 
+    height: 135px; 
+    display: block
+}
+.pulse-display { text-align: center; 
+    width: 500px ; 
+    background: linear-gradient(135deg, #e94560, #0f3460); 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+}
 .pulse-value { font-size: 72px; font-weight: bold; }
-.controls { display: flex; width: 100%; justify-content: center; align-items: center; gap: 15px; position: relative; left: 30px; }
+.controls { display: flex; width: 100%; justify-content: center;align-items: center; gap: 15px; position: relative; }
 button { padding: 15px 30px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
 button:disabled { background: #555; cursor: not-allowed; }
 #startBtn { background: #4CAF50; color: white; }
@@ -44,27 +85,38 @@ button:disabled { background: #555; cursor: not-allowed; }
 
 @media (max-width: 768px) {
     .main-logo {
-        max-width: 95vw;
+        max-width: 90vw;
     }
-    .grid-container { width: 100vw;max-width: 100%; display: flex; flex-direction: column ; margin: 0 auto; flex-wrap: wrap; justify-content: center; padding-left: 30px}
-
-    .pulse-display { text-align: center; 
+    body { padding: 0;}
+    .video-container { position: relative; width: 100%; max-width: 640px; height: 480px; margin: 0 auto 0 auto;  }
+    .grid-container { width: 100vw;  
         max-width: 100%; 
+        display: flex; 
+        flex-direction: column ; 
+        margin: 0 0; 
+        flex-wrap: nowrap; 
+        justify-content: center; 
+        padding: 20px;
+    }
+    #pulseChart { width: 100%; max-height: 150px; height: 21.5vw; display: block}
+    .pulse-display { text-align: center; 
+        height: 70%;
         position: relative;
         background: linear-gradient(135deg, #e94560, #0f3460); 
         padding: 30px; 
         border-radius: 10px; 
         margin-bottom: 20px; 
-        
     }
+    .pulse-value { font-size: 40px; font-weight: bold; }
+    .pulse-unit { font-size: 80%; }
     .chart-container { width: 500px ; 
-        max-width: 100%;
-        float: none; 
         position: relative;
         background: rgba(0, 0, 0, 0.516); 
         border: 1px solid #333; 
         border-radius: 10px; 
         padding: 10px; 
         margin-bottom: 20px; }
+
+
 }
 
