@@ -88,7 +88,7 @@ button:disabled { background: #555; cursor: not-allowed; }
         max-width: 90vw;
     }
     body { padding: 0;}
-    .video-container { position: relative; width: 100%; max-width: 640px; height: 280px; margin: 0 auto 0 auto;  }
+    .video-container { position: relative; width: 100%; max-width: 640px; height: 60vw; margin: 0 auto 0 auto;  }
     .grid-container { width: 100vw;  
         max-width: 100%; 
         display: flex; 
