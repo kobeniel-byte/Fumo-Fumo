@@ -6,9 +6,12 @@ const pulseValue = document.getElementById('pulseValue');
 const status = document.getElementById('status');
 const pulseChart = document.getElementById('pulseChart');
 const chartCtx = pulseChart.getContext('2d');
+const isMobileDevice = /Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
 var OpenCameraMeshBlud = Boolean
 
+let distancethingy = 0;
 let lastPulseUpdate = 0;
 let signalData = [];
 const WINDOW_SIZE = 150; 
@@ -41,14 +44,16 @@ faceMesh.onResults((results) => {
         const estimatedDistanceCm = (640 * 15) / faceWidthPixels;
         
         let color = "#00FF00"; // Green by default
-        let message = String(estimatedDistanceCm) + "Signal: Strong";
+        let message = "Signal: Strong";
+        distancethingy = estimatedDistanceCm
+        
 
         if (estimatedDistanceCm < 25) {
             color = "#FF0000"; // Red
-            message = String(estimatedDistanceCm) + "Too Close! Move back.";
+            message = "Too Close! Move back.";
         } else if (estimatedDistanceCm > 65) {
             color = "#FFFF00"; // Yellow
-            message = String(estimatedDistanceCm) + "Too Far! Move closer.";
+            message = "Too Far! Move closer.";
         }
 
         // Draw Bounding Box with dynamic color
@@ -59,12 +64,16 @@ faceMesh.onResults((results) => {
             
             
         } 
-
         
-
         // Update UI
         document.getElementById('signalQuality').innerText = message;
-
+        
+        if (isMobileDevice) {
+            let mobiledistance = distancethingy / 2
+            document.getElementById('fps').innerText = String(mobiledistance.toFixed(1)) + "cm";
+        } else {
+            document.getElementById('fps').innerText = String(distancethingy.toFixed(1)) + "cm";
+        }
         // Waveform & BPM
         const noise = Math.random() * 5;
         const wave = Math.sin(Date.now() / 200) * 20 + 50 + noise;
@@ -81,6 +90,9 @@ faceMesh.onResults((results) => {
         document.getElementById('signalQuality').innerText = "No Face Detected";
     }
 });
+
+
+
 
 function drawWave(data) {
     chartCtx.clearRect(0, 0, pulseChart.width, pulseChart.height);
